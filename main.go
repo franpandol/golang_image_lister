@@ -47,11 +47,11 @@ func imageListHandler(w http.ResponseWriter, r *http.Request) {
     // Set the appropriate content type header
     w.Header().Set("Content-Type", "application/json")
 
-    // Get the weather data
-    weatherData := getData()
+    // Get the data
+    data := getData()
 
-    // Write the weather data to the response
-    json.NewEncoder(w).Encode(weatherData)
+    // Write the data to the response
+    json.NewEncoder(w).Encode(data)
 }
 func getData() ImageList {
 	files, err := ioutil.ReadDir("./images")
